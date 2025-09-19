@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Sebil Quran Academy</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                background: #f7f7f7;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            header{
+                background: #2f855a;
+                color:white;
+                padding: 30px 20px;
+            }
+            header h1 {
+                margin: 10px 0 20px;
+                font-size: 18px;
+            }
+            .btn{
+                background: #38a169;
+                color:white;
+                padding: 10px 20px;
+                margin: 5px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: bold;
+                display: inline-block;
+            }
+            .card{
+                background: white;
+                padding: 20px;
+                max-width: 400px;
+                margin: 30px auto;
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            }
+            .card input, .card select{
+                width: 100%;
+                padding: 10px;
+                margin: 8px 0;
+                border:1px solid #ccc;
+                border-radius: 8px;
+            }
+            .card button {
+                width: 100%;
+                padding: 12px;
+                background: #2f855a;
+                color:white;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            .card button:hover{
+                background: #276749;
+            }
+            section {
+                margin: 40px auto;
+                max-width: 600px;
+            }
+            section h2 {
+                color:#2f855a;
+                margin-bottom: 15px;
+            }
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+            ul li {
+                margin: 8px 0;
+                font-size: 16px;
+            }
+        </style>
+      </head>
+      <body>
+
+
+        <header>
+            <h1>Sebil Quran Academy</h1>
+            <p>Learn Qur'an with Tajweed - One-to-One Online Classes | Free First Class</p>
+            <a href="https://wa.me/251701069860" target="_blank" class="btn">WhatsApp:0701069860</a>
+        </header>
+
+
+         <div class="card">
+            <h2>Register Now</h2>
+            <form onsubmit="sendToWhatsApp(event)">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="number" id="age" placeholder="Age" required>
+                <input type="text" id="country" placeholder="country" required>
+                <input type="text" id="whatsApp" placeholder="WhatsApp Number" required>
+                <select id="time" required>
+                    <option value="">Preferred Class Time</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Evening">Evening</option>
+                </select>
+                <button type="submit">Submit Registration</button>
+            </form>
+         </div>
+        
+         <section>
+            <h2>Why Choose Sebil Quran Academy?</h2>
+            <ul>
+                <li>*One-to-One Classes</li>
+                <li>*Flexible Timing (Morning or Evening</li>
+                <li>*Qualified Teaching</li>
+                <li>*Free First Class for New Students</li>
+            </ul>
+         </section>
+         
+
+         <script>
+            function sendToWhatsApp(event) {
+                event.preventDefault();
+                let name = document.getElementById("name").value;
+                let age = document.getElementById("age").value;
+                let country = document.getElementById("country").value;
+                let whatsApp = document.getElementById("whatsapp").value;
+                let time = document.getElementById("time").value;
+
+
+                let message = `Assalamu Alaikum,I want to register at Sebil Quran Academy.%0A%0A`+
+                              `Name: ${name}%0A` +
+                              `Age: ${age}%0A` +
+                              `Country: ${country}%0A` +
+                              `My WhatsApp: ${whatsapp}%0A` +
+                              `Preferred Time: ${time}`;
+                //Send to SECOND WhatsApp number (0701069860)
+                let phone = "251701069860";
+                
+                let url = `https://wa.me/${phone}?text=${message}`;
+                window.open(url, "_blank");
+            } 
+         </script>
+
+       </body>
+       </html>  
